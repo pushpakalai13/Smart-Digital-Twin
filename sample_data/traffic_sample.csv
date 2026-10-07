@@ -1,0 +1,5 @@
+building_id,timestamp,value,unit
+B001,2026-09-01T08:00:00,45,vehicles
+B001,2026-09-01T09:00:00,120,vehicles
+B004,2026-09-01T08:00:00,65,vehicles
+B007,2026-09-01T12:00:00,90,vehicles

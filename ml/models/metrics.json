@@ -1,0 +1,108 @@
+{
+  "energy": {
+    "selected_model": "xgboost",
+    "metrics": {
+      "r2": 0.6289,
+      "mae": 26.8027,
+      "rmse": 58.408
+    },
+    "comparison": {
+      "linear_regression": {
+        "r2": 0.4186,
+        "mae": 42.1774,
+        "rmse": 73.106
+      },
+      "random_forest": {
+        "r2": 0.5762,
+        "mae": 28.4508,
+        "rmse": 62.4176
+      },
+      "xgboost": {
+        "r2": 0.6289,
+        "mae": 26.8027,
+        "rmse": 58.408
+      }
+    },
+    "model_path": "energy_forecaster.joblib"
+  },
+  "water": {
+    "selected_model": "xgboost",
+    "metrics": {
+      "r2": 0.7082,
+      "mae": 903.7256,
+      "rmse": 2242.3715
+    },
+    "comparison": {
+      "linear_regression": {
+        "r2": 0.5003,
+        "mae": 1360.4769,
+        "rmse": 2934.5745
+      },
+      "random_forest": {
+        "r2": 0.68,
+        "mae": 892.8701,
+        "rmse": 2348.4295
+      },
+      "xgboost": {
+        "r2": 0.7082,
+        "mae": 903.7256,
+        "rmse": 2242.3715
+      }
+    },
+    "model_path": "water_forecaster.joblib"
+  },
+  "traffic": {
+    "selected_model": "random_forest",
+    "metrics": {
+      "r2": 0.9457,
+      "mae": 5.7611,
+      "rmse": 8.5373
+    },
+    "comparison": {
+      "linear_regression": {
+        "r2": 0.5831,
+        "mae": 14.3831,
+        "rmse": 23.6535
+      },
+      "random_forest": {
+        "r2": 0.9457,
+        "mae": 5.7611,
+        "rmse": 8.5373
+      },
+      "xgboost": {
+        "r2": 0.9126,
+        "mae": 7.0516,
+        "rmse": 10.8324
+      }
+    },
+    "model_path": "traffic_forecaster.joblib"
+  },
+  "occupancy": {
+    "selected_model": "random_forest",
+    "metrics": {
+      "r2": 0.9744,
+      "mae": 24.443,
+      "rmse": 36.5667
+    },
+    "comparison": {
+      "linear_regression": {
+        "r2": 0.846,
+        "mae": 53.9814,
+        "rmse": 89.7606
+      },
+      "random_forest": {
+        "r2": 0.9744,
+        "mae": 24.443,
+        "rmse": 36.5667
+      },
+      "xgboost": {
+        "r2": 0.9567,
+        "mae": 31.3733,
+        "rmse": 47.597
+      }
+    },
+    "model_path": "occupancy_forecaster.joblib"
+  },
+  "last_trained": "2026-10-05T09:53:43.434346+00:00",
+  "source": "simulated"
+}

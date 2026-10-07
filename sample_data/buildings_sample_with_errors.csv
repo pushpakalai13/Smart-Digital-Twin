@@ -1,0 +1,4 @@
+building_id,name,category,capacity,floors,area_sqft,lat,lng
+B011,New BioTech Innovation Complex,labs,600,5,65000,12.9755,77.5960
+B012,BAD_LATLNG_BUILDING,sports,-400,3,35000,999.00,999.00
+B013,INVALID_LAT_BUILDING,labs,500,4,48000,INVALID_LAT,77.5945

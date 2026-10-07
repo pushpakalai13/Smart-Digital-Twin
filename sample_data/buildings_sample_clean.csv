@@ -1,0 +1,5 @@
+building_id,name,category,capacity,floors,area_sqft,lat,lng
+B011,New BioTech Innovation Complex,labs,600,5,65000,12.9755,77.5960
+B012,Student Activity & Cultural Center,sports,400,3,35000,12.9712,77.5978
+B013,Graduate Computing & Data Center,labs,500,4,48000,12.9740,77.5945
+B014,Campus Wellness & Medical Clinic,admin,250,2,22000,12.9708,77.5930

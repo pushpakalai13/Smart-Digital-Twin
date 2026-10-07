@@ -1,0 +1,11 @@
+building_id,name,category,capacity,floors,area_sqft,lat,lng
+B001,Academic Block A,Academic,500,4,45000,12.9728,77.5935
+B002,Academic Block B,Academic,400,4,38000,12.9728,77.5945
+B003,Central Library,Library,300,3,28000,12.9722,77.5940
+B004,Admin Complex,Administrative,200,2,18000,12.9720,77.5932
+B005,Student Hostel North,Residential,600,5,52000,12.9712,77.5945
+B006,Student Hostel South,Hostel,600,6,50000,12.9706,77.5945
+B007,Campus Canteen & Food Court,Canteen,500,2,25000,12.9714,77.5936
+B008,Indoor Sports Complex,Sports,400,2,35000,12.9718,77.5954
+B009,Advanced Research Labs,Labs,350,4,40000,12.9735,77.5942
+B010,Technology Innovation Hub,Labs,450,4,45000,12.9735,77.5950

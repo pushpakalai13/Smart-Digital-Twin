@@ -1,0 +1,30 @@
+# Python
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Node / Frontend
+node_modules/
+dist/
+.output/
+.vite/
+
+# Environment and Data
+.env
+*.env
+backend/.env
+frontend/.env
+.env.local
+data/
+*.log
+*.sqlite3
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
