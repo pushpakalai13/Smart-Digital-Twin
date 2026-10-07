@@ -15,26 +15,33 @@ from app.routers import (
 logger = logging.getLogger("smart_campus.api")
 logging.basicConfig(level=logging.INFO)
 
+import threading
+
+def _background_init():
+    try:
+        logger.info("Initializing database connection in background...")
+        db, status_str = init_db()
+        if db is not None and status_str == "connected":
+            try:
+                user_count = db.users.count_documents({})
+                if user_count == 0:
+                    logger.info("Database empty on startup. Triggering auto-seeding...")
+                    import sys, os
+                    sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
+                    from database.seed_data import seed_database
+                    from backend.ml.pipeline import run_ml_pipeline
+                    seed_database(force=True)
+                    run_ml_pipeline(source="simulated")
+            except Exception as err:
+                logger.warning(f"Startup background auto-seed notice: {err}")
+    except Exception as err:
+        logger.warning(f"Background database init notice: {err}")
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    logger.info("Initializing Smart Campus Digital Twin API Backend...")
-    db, status_str = init_db()
-    
-    # Auto-seed and auto-train on startup if database empty
-    if db is not None and status_str == "connected":
-        try:
-            user_count = db.users.count_documents({})
-            if user_count == 0:
-                logger.info("Database empty on startup. Triggering auto-seeding...")
-                import sys, os
-                sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
-                from database.seed_data import seed_database
-                from ml.pipeline import run_ml_pipeline
-                seed_database(force=True)
-                run_ml_pipeline(source="simulated")
-        except Exception as err:
-            logger.warning(f"Startup auto-seed notice: {err}")
-    
+    logger.info("Initializing Smart Campus Digital Twin API Backend (Instant Port Binding Mode)...")
+    init_thread = threading.Thread(target=_background_init, daemon=True)
+    init_thread.start()
     yield
     logger.info("Shutting down Smart Campus Digital Twin API Backend...")
 
