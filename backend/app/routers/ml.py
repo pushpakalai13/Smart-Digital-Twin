@@ -10,7 +10,9 @@ from ml.pipeline import run_ml_pipeline
 
 router = APIRouter(prefix="/ml", tags=["Machine Learning Pipeline"])
 
-MODEL_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "..", "ml", "models")
+MODEL_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "ml", "models")
+if not os.path.exists(MODEL_DIR):
+    MODEL_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "..", "ml", "models")
 METRICS_PATH = os.path.join(MODEL_DIR, "metrics.json")
 
 _is_training = False

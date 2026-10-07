@@ -9,7 +9,9 @@ from app.core.security import get_current_user
 
 router = APIRouter(tags=["Facilities & Occupancy"])
 
-MODEL_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "..", "ml", "models")
+MODEL_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "ml", "models")
+if not os.path.exists(MODEL_DIR):
+    MODEL_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "..", "ml", "models")
 
 def get_active_source(db):
     setting = db.settings.find_one({"key": "data_source"})
